@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="main">
+        <h2>Verify Account</h2>
+        <div class="sub">
+            <p>Enter the OTP sent to your phone</p>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <button>Submit</button>
+            <div class="bott">
+                <span>Didn't receive OTP?</span>
+                <a href="#">Resend</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var resendLink = document.querySelector("a");
+        console.log(resendLink);
+
+        resendLink.addEventListener("click", function () {
+            var otp = Math.floor(Math.random() * 10001);
+            var boxes = document.querySelectorAll(".box");
+
+            otp = otp.toString().padStart(4, '0');
+            boxes.forEach((box, index) => {
+                box.textContent = otp[index];
+            });
+        });
+    </script>
+</body>
+
+</html>
